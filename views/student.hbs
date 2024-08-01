@@ -1,0 +1,154 @@
+<div class="row">
+    <main class="col-md-12">
+        <br />
+        <h2>{{student.firstName}}
+            {{student.lastName}}
+            - Student:
+            {{student.studentNum}}</h2>
+        <hr />
+        <form method="post" action="/student/update">
+            <input
+                type="hidden"
+                name="studentNum"
+                value="{{student.studentNum}}"
+            />
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>First Name:</label>
+                            <input
+                                class="form-control"
+                                name="firstName"
+                                type="text"
+                                value="{{student.firstName}}"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Last Name:</label>
+                            <input
+                                class="form-control"
+                                name="lastName"
+                                type="text"
+                                value="{{student.lastName}}"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input
+                                class="form-control"
+                                name="email"
+                                type="email"
+                                value="{{student.email}}"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Address Street:</label>
+                            <input
+                                class="form-control"
+                                name="addressStreet"
+                                type="text"
+                                value="{{student.addressStreet}}"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>City:</label>
+                            <input
+                                class="form-control"
+                                name="addressCity"
+                                type="text"
+                                value="{{student.addressCity}}"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Province:</label>
+                            <input
+                                class="form-control"
+                                name="addressProvince"
+                                type="text"
+                                value="{{student.addressProvince}}"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                name="TA"
+                                type="checkbox"
+                                {{#if student.TA}}
+                                checked=true
+                                {{/if}}
+                            />
+                            <label class="form-check-label">TA</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <label>Status</label>
+                            <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                name="status"
+                                type="radio"
+                                {{#equal student.status "Full Time"}}
+                                checked=true
+                                {{/equal}}
+                                value="Full Time">
+                            <label class="form-check-label">Full Time</label>
+                            </div>
+                            <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                name="status"
+                                type="radio"
+                                {{#equal student.status "Part Time"}}
+                                checked=true
+                                {{/equal}}
+                                value="Part Time">
+                            <label class="form-radio-label">Part Time</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                            {{#if courses}}
+                        <div class="form-group">
+                            <label for="course">Enrolled in Course:</label>
+                            <select class="form-control" name="course" id="course">
+                            <option value="">Select Course</option>
+                            {{#each courses}}
+                            <option value="{{courseId}}" {{#equal ../student.course courseId}}selected="selected"{{/equal}}>{{courseCode}}</option>
+                            {{/each}}
+                            </select>
+                            {{else}}
+                            <div>No Courses</div>
+                            {{/if}}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <hr />
+            <input
+                type="submit"
+                class="btn btn-primary oat-right"
+                value="Update Student"
+            /><br /><br /><br />
+        </form>
+    </main>
+</div>

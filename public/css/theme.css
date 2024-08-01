@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+.bg-light {
+    background: rgb(71, 106, 194);
+    background: linear-gradient(0deg, rgb(36, 88, 222) 0%, rgba(46,48,53,1) 100%);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+.navbar-light .navbar-brand {
+    font-family: "'Brush Script MT', cursive", sans-serif  !important;
+    text-shadow: 2px 2px #41ff33fc, -2px -2px cyan;
+    font-weight: bold;
+    color: white;
+}
+.nav-link {
+    font-family: "'Brush Script MT', cursive", sans-serif  !important;
+    color: white !important;
+}
+.nav-link:hover, .nav-item.active {
+    background-color: rgb(30, 223, 236) !important;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0px, -1px, 0px);
+}
+body {
+    background-color: #293c6c
+}
+html {
+    background-color: #2d2da2
+}
+thead, tbody tr:nth-child(even) {
+    background-color: #895c32;
+}
+h1, h2, h3, h4, h5, h6, a, p, label, td, th, ol, li {
+    font-family: "'Brush Script MT', cursive", sans-serif;
+    color: white;
+}
+a:hover {
+    color: #007bff;
+}
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.form-section {
+    margin-bottom: 20px;
+}
+.form-row {
+    display: flex;
+    margin-right: 10px;
+}
+.form-column {
+    flex: 1;
+    margin-right: 10px;
+}
+.form-column:last-child {
+    margin-right: 0px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"], input[type="email"], select {
+    width: 100%;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.2) !important;
+    color:white !important;
+}
+input[type="text"]:focus:hover, input[type="email"]:focus:hover {
+    background-color: rgba(0,0,0,.2) !important;
+    color:white !important;
+    border: 2px blue;
+}
+.checkpoint-label {
+    display: inline-block;
+    margin-right: 10px;
+}
+.submit-button {
+    background-color: lightgray;
+    color:black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    float: right;
+    border-radius: 5px;
+}
+.submit-button:hover {
+    background-color: #007bff;
+    color: white;
+}
